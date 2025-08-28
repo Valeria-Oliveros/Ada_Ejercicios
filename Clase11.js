@@ -63,3 +63,79 @@ if (numi < numf) {
 } else {
     console.log('⚠️ El rango de números no es valido, vuelve a intentarlo.');
 }
+
+// Ejercicio 6: Mostrar la tabla de multiplicar de un número
+
+let num4 = parseFloat(prompt('Ingrese un número cualquiera: '));
+console.log(`La tabla del número ${num4} es:`);
+if (num4 > 0) {
+    for (let i = 1; i <= 10; i++) { 
+        let res2 = num4 * i;
+        console.log(`${num4} x ${i} = ${res2}`);
+    }
+}
+
+// Ejercicio 7: Mostrar el calculo que elija el usuario (+, -, *, /)
+
+let num5 = parseFloat(prompt('Ingresa el primer número: '));
+let num6 = parseFloat(prompt('Ingresa el segundo número: '));
+let op = prompt('Ingresa la operación (suma, resta, multiplicacion, division): ');
+let res3;
+switch (op) {
+    case 'suma':
+        res3 = num5 + num6; 
+        console.log(`✨ El resultado de la suma ${num5} + ${num6} = ${res3}`);
+        break;
+    case 'resta':
+        res3 = num5 - num6;
+        console.log(`✨ El resultado de la resta ${num5} - ${num6} = ${res3}`);
+        break;  
+    case 'multiplicacion':
+        res3 = num5 * num6;
+        console.log(`✨ El resultado de la multiplicación ${num5} * ${num6} = ${res3}`);
+        break;
+    case 'division':
+        if (num6 != 0) {
+            res3 = num5 / num6;
+            console.log(`✨ El resultado de la división ${num5} / ${num6} = ${res3}`);
+        } else {
+            console.log('⚠️ Error: No se puede dividir');
+        }   
+        break;
+    default:
+        console.log('⚠️ Operación no válida, vuelva a intentarlo.');
+        break;
+}
+
+// Ejercicio 8: Mostrar los multiplos de un número del 1 al 100
+
+let num7 = parseFloat(prompt('Ingresa un número positivo: '));
+if (num7 > 0) {
+    console.log(`✨ Los multiplos de ${num7} entre 1 y 100 son:`);
+    for (let i = 1; i <= 100; i++) {
+        if (i % num7 === 0) {
+            console.log(i);
+        }   
+    }
+}
+
+// Ejercicio 9: Mostrar la cuenta regresiva de un despegue 
+
+console.log('Iniciando cuenta regresiva ...');
+for (let i = 10; i >= 1; i--) {
+    console.log(i);
+}
+console.log('¡Despegue! 🚀');
+
+// Ejercicio 10: Adivina un número al azar en 3 intentos 
+
+let nums = Math.floor(Math.random() * 10) + 1;
+for (let i = 1; i <= 3; i++) {
+    let num8 = parseInt(prompt('Adivina el número entre 1 y 10: '));
+    if (num8 === nums) {
+        console.log('🎉 ¡Felicidades! ¡Adivinaste el número!');
+        break;
+    } else if (i === 3) {
+        console.log(`❌ Lo siento, has agotado tus intentos. El número era ${nums}.`);
+    }
+}
