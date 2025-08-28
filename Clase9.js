@@ -64,3 +64,62 @@ if (mun1 > mun2 && mun1 > mun3){
 } else {
     console.log(`El ${mun3} es el número mayor ✨`);
 }
+
+// Ejercicio 6: Verificar si el usuario es mayor de edad
+
+let edad = prompt('Ingresa tu edad:');
+if(edad >= 18){
+    console.log('✅ El usuario es mayor de edad');
+}else {
+    console.log('⚠️ El usuario es menos de edad');
+}
+
+// Ejercicio 7: Mostrar el peso del usuario en libras
+
+let pesok = prompt('Ingresa tu peso en KG:');
+const lib= 2.20462;
+let pesol = pesok * lib;
+console.log(`Tu peso en libras es: ${pesol} lb ✨`);
+
+// Ejercicio 8: Mostrar el tipo de triagulo según las medidas
+
+let la1 = prompt('Ingresa la longitud del lado 1:');
+let la2 = prompt('Ingresa la longitud del lado 2:');
+let la3 = prompt('Ingresa la longitud del lado 3:');
+if(la1 === la2 && la2 === la3){
+    console.log('Es un triangulo EQUILATERO ✨');
+}else if(la1 === la2 || la1 === la3 || la2 === la3){
+    console.log('Es un triangulo ISOSCELES ✨');
+}else {
+    console.log('Es un triangulo ESCALENO ✨');
+}
+
+// Ejercicio 9: Mostrar el área y perimetro de un circulo
+
+let rad = prompt('Ingresa el radio del circulo:');
+const pi = 3.14159;
+let area = pi * (rad * rad);
+let peri = 2 * pi * rad;
+console.log(`El perimetro del circulo es: ${peri} ✨`);
+console.log(`El area del circulo es: ${area} ✨`);
+
+// Ejercicio 10: Mostrar el día de la semana correspondiente 
+
+let sem = prompt('Ingrese un número del 1 al 7:');
+if(sem == 1){
+    console.log('Estamos en el día LUNES ✨');
+} else if(sem == 2){
+    console.log('Estamos en el día Martes ✨');
+} else if(sem == 3){
+    console.log('Estamos en el día Miércoles ✨');
+} else if(sem == 4){
+    console.log('Estamos en el día Jueves ✨');
+} else if(sem == 5){
+    console.log('Estamos en el día Viernes ✨');
+} else if(sem == 6){
+    console.log('Estamos en el día Sábado ✨');
+} else if(sem == 7){
+    console.log('Estamos en el día Domingo ✨');
+} else {
+    console.log('El número ingresado no es un día válido ⚠️');
+}
