@@ -9,7 +9,7 @@ const prompt = require("prompt-sync")();
 
 // Ejercicio 1: Sumar todos los números ingresados, hasta que el usuaria pona un número negativo
 
-console.log("---Ejercicio 1: Suma cadena de números---");
+console.log("---Ejercicio 1: Suma cadena de números--- \n");
 let suma = 0;
 let num1 = parseInt(prompt("Ingrese un número (negativo para terminar): "));
 while (num1 >= 0) {
@@ -20,7 +20,7 @@ console.log("✨ La suma total de los números ingresados es: " + suma + " \n");
 
 // Ejecicio 2: Digite la contraseña 
 
-console.log("---Ejercicio 2: Digite la contraseña---");
+console.log("---Ejercicio 2: Digite la contraseña--- \n");
 let contc = "1234";
 let conti;
 do {
@@ -33,7 +33,7 @@ console.log("✅ ¡Contraseña correcta! Bienvenido. \n");
 
 // Ejercicio 3: Contar los números impares entre 0 y X
 
-console.log("---Ejercicio 3: Contar números impares entre 0 y X---");
+console.log("---Ejercicio 3: Contar números impares entre 0 y X--- \n");
 let x = parseInt(prompt("Ingrese un número entero positivo: "));
 let num2 = 0;
 for (let i = 0; i <= x; i ++) {
@@ -45,7 +45,7 @@ console.log("✨ La cantidad de números impares entre 0 y " + x + " es: " + num
 
 // Ejercicio 4: Mostrar las notas de varios estudiantes
 
-console.log("---Ejercicio 4: Mostrar notas de varios estudiantes---");
+console.log("---Ejercicio 4: Mostrar notas de varios estudiantes--- \n");
 let notas = [];
 let can = parseInt(prompt("¿Cuántas notas de estudiantes desea ingresar?: "));
 for (let i = 0; i < can; i++) {
@@ -60,7 +60,8 @@ console.log("\n");
 
 // Ejercicio 5: Verificar si el nombre está en la lista ingresada
 
-console.log("---Ejercicio 5: Verificar si el nombre está en la lista---");
+console.log("---Ejercicio 5: Verificar si el nombre está en la lista--- \n");
+console.log("Ingrese 5 nombres: ");
 let nomb = [];
 for (let i = 0; i < 5; i++) {
     let nom = prompt("Ingresa el nombre " + (i + 1) + ": ");
@@ -73,3 +74,46 @@ if (nomb.includes(num4)) {
 } else {
     console.log("❌ El nombre " + num4 + " no está en la lista. \n");
 }
+
+// Ejercicio 6: Sumar los números de una matriz que sean mayores o iguales a 10 y menores a 1000
+
+console.log("---Ejercicio 6: Suma de números iguales a 10 pero menores de 1000--- \n");
+let mat1 = [
+    [10, 3, 2, 1, 4, 7],
+    [5, 5, 10, 100, 4],
+    [5, 125, 10, 1020, 4],
+    [5, 5, 5097, 100, 4],
+];
+let sum1 = 0;
+for (let i = 0; i < mat1.length; i++) {
+    for (let j = 0; j < mat1[i].length; j++) {
+        let val1 = mat1[i][j];
+        if (val1 >= 10 && val1 < 1000) {
+            sum1 += val1;
+        }
+    }
+}
+console.log("✨ La suma de los elementos iguales a 10 y menores a 1000 es: " + sum1 + " \n");
+
+// Ejercicio 7: Sumar todos los números de una matriz 5x5
+
+console.log("---Ejercicio 7: Suma de matriz 5x5--- \n");
+let mat2 = [
+    [ 10,   4,   2,   8,   4],
+    [ 50,   5,   5, 700,   9],
+    [ 11,  13,  15,  17,  19],
+    [ 20,   5,  30, 105,  40],
+    [100, 200, 300, 400, 500] 
+];
+let sum2 = 0;
+for (let i = 0; i < mat2.length; i++) {
+    for (let j = 0; j < mat2[i].length; j++) {
+        let val2 = mat2[i][j];
+        sum2 += val2;
+    }
+}
+console.log("✨ La suma de los elementos de la matriz 5x5 es: " + sum2 + " \n");
+
+// Ejercicio 8: Sumar las diagonales roja y verde de una matriz 10x10
+
+// Ejercicio 9: Última aparición de un modelo de auto
