@@ -116,4 +116,114 @@ console.log("✨ La suma de los elementos de la matriz 5x5 es: " + sum2 + " \n")
 
 // Ejercicio 8: Sumar las diagonales roja y verde de una matriz 10x10
 
+console.log("---Ejercicio 8: Suma de diagonales en matriz 10x10--- \n");
+let mat3 =[];
+for (let i = 0; i < 10; i++) {
+    mat3[i] = [];   
+    for (let j = 0; j < 10; j++) {
+        mat3[i][j] = i * 10 + j + 1; 
+    }
+}
+let diagr = [];
+let sum31 = 0;
+for (let i = 0; i < 10; i++) {
+    diagr.push(mat3[i][i]);
+}
+for (let i = 0; i < diagr.length; i++) {
+    sum31 += diagr[i];
+}
+let diagv = [];
+let sum32 = 0; 
+for (let i = 0; i < 10; i++) {
+    diagv.push(mat3[i][9 - i]);
+}   
+for (let i = 0; i < diagv.length; i++) {
+    sum32 += diagv[i];
+} 
+console.log("✨ La suma de la diagonal roja es: " + sum31);
+console.log("✨ La suma de la diagonal verde es: " + sum32 + " \n");
+
 // Ejercicio 9: Última aparición de un modelo de auto
+
+console.log("---Ejercicio 9: Aplicación para control de gastos.--- \n");
+console.log("✨Opciones: \n1️⃣  Total gastos en una semana del mes. \n2️⃣  Total gastos en un día del mes. \n3️⃣  Total de gastos en el mes. \n4️⃣  Semana con más gastos. \n5️⃣  Día con más gastos. \n");
+let opc = parseInt(prompt("Ingrese la opción de la información que desea consultar: "));
+let gas = [
+    [1135, 2500,  900, 1600, 2800, 3650, 1100],
+    [1750, 1890, 1900, 1300,  898, 1750, 2800],
+    [1700, 1150, 1690, 1900, 1900, 4500, 2560],
+    [ 800, 1250, 1430, 2100, 2100, 1270,  950]
+]
+switch (opc){
+    case 1:
+        let sem = parseInt(prompt("Ingrese la semana del mes (1-4): "));
+        if (sem >= 1 && sem <= 4){
+            console.log("✨ El total de gastos en la semana " + sem + " es de: $" + totalsem(sem) + "\n");
+        } else {
+            console.log("❌ Semana inválida. \n");
+        }
+        break;
+    case 2:
+        let dia = parseInt(prompt("Ingrese el día del mes (1-7): "));
+        if (dia >= 1 && dia <= 7){
+            console.log("✨ El total de gastos en el día " + dia + " es de: $" + totaldia(dia) + "\n");
+        } else {
+            console.log("❌ Día inválido. \n");
+        }
+        break;
+    case 3:
+        console.log("✨ El total de gastos en el mes es de: $ " + totalmes() + "\n");
+        break;
+    case 4:
+        console.log("✨ La semana con más gastos es: La semana " + semmas() + "\n");
+        break;
+    case 5:
+        console.log("✨ El día con más gastos es: El día " + diamas() + "\n");
+        break;
+    default:
+        console.log("❌ Opción inválida. \n");
+        break;
+}
+function totalsem (sem){
+    return gas[sem - 1].reduce((a, b) => a + b, 0);
+}
+function totaldia (dia){
+    let total = 0;
+    for (let i = 0; i < gas.length; i++){
+        total += gas[i][dia - 1];
+    }
+    return total;
+}
+function totalmes (){
+    let total = 0;
+    for (let i = 0; i < gas.length; i++){
+        for (let j = 0; j < gas[i].length; j++){
+            total += gas[i][j];
+        }
+    }
+    return total;
+}
+function semmas (){
+    let max = totalsem(1);
+    let semana = 1;
+    for (let i = 2; i <= 4; i++){
+        let total = totalsem(i);    
+        if (total > max){
+            max = total;
+            semana = i;
+        }
+    }
+    return semana;
+}
+function diamas (){
+    let max = totaldia(1);
+    let dia = 1;
+    for (let i = 2; i <= 7; i++){
+        let total = totaldia(i);    
+        if (total > max){
+            max = total;
+            dia = i;
+        }
+    }
+    return dia;
+}
