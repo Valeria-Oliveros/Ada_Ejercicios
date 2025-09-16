@@ -45,9 +45,9 @@ console.log(mascotaAtendida, "✅  Ha sido atendido", "\n✨ La lista actual es:
 
 console.log("---Ejercicio 4: Convertir una lista de palabras en una frase--- \n");
 let palabras = ["JavaScript", "es", "muy", "divertido"];
-let frase = palabras.join(" ");
+let frase1 = palabras.join(" ");
 console.log("✨ Lista de palabras: \n", palabras, "\n");
-console.log("📝 Frase formada: \n", frase, "\n");
+console.log("📝 Frase formada: \n", frase1, "\n");
 
 // Ejercicio 5: Buscar la posición de un elemento
 
@@ -63,33 +63,53 @@ else {
     console.log("\n❌ El color ", colorBuscado, " no se encuentra en la lista.\n");
 }
 
-
 // Ejercicio 6: Buscar la última posición de un elemento repetido
 
-
+console.log("---Ejercicio 6: Buscar la última posición de un elemento repetido--- \n");
+let listaNum = [2,5,7,2,8,7,1,3,5,4,6,8,9,1,4,3];
+let numBuscado = parseInt(prompt("Ingrese un número a buscar (entre 1 y 9): "));
+let ultimaPosicion = listaNum.lastIndexOf(numBuscado);
+if (ultimaPosicion !== -1) {
+    let correccion = ultimaPosicion + 1;
+    console.log("\n✨ El número ", numBuscado, " se encuentra por última vez en la posición ", correccion, " de la lista.\n");
+} else {
+    console.log("\n❌ El número ", numBuscado, " no se encuentra en la lista.\n");
+}
 
 // Ejercicio 7: Verificar si una lista contiene un elemento
 
-
+console.log("---Ejercicio 7: Verificar si una lista contiene un elemento--- \n");
+let listaCom = ["pizza", "hamburguesa", "tacos", "pasta"];
+let comidaBuscada = prompt("Ingrese el nombre de una comida a buscar: ").toLowerCase();
+if (listaCom.includes(comidaBuscada)) {
+    console.log("\n✨ ", comidaBuscada, "✨ Se encuentra en la lista.\n");
+}else {
+    console.log("\n❌ ", comidaBuscada, "❌ No se encuentra en la lista.\n");
+}
 
 // Ejercicio 8: Extraer una parte de una frase
 
-
+console.log("---Ejercicio 8: Extraer una parte de una frase--- \n");
+let frase2 = "Los gatos son geniales";
+let parteFrase = frase2.slice(4, 9);
+console.log("📝 Frase original: ", frase2);
+console.log("✨ Parte extraída: ", parteFrase, "\n");
 
 // Ejercicio 9: Eliminar espacios innecesarios
 
-
+console.log("---Ejercicio 9: Eliminar espacios innecesarios--- \n");
+let fraseConEspacios = "      Hola, mundo!      ";
+let fraseSinEspacios = fraseConEspacios.trim();
+console.log("📝 Frase sin espacios innecesarios: '" + fraseSinEspacios + "'\n");
 
 // Ejercicio 10: Reemplazar palabras en una frase
 
+console.log("---Ejercicio 10: Reemplazar una palabra en una frase--- \n");
+let fraseOriginal = "Me gusta el invierno";
+console.log("📝 Frase original: '" + fraseOriginal + "'\n");
+let palabraAReemplazar = prompt("Ingrese la palabra que desea reemplazar: ").toLowerCase();
+let nuevaPalabra = prompt("Ingrese la nueva palabra: ").toLowerCase();
+let fraseModificada = fraseOriginal.replace(palabraAReemplazar, nuevaPalabra);
+console.log("\n✨ Frase modificada: '" + fraseModificada + "'\n");
 
-
-// Ejercicio 11: Gestión de inventario de una tienda
-
-
-
-// Ejercicio 12: Clasificación de palabras según su longitud
-
-
-
-// Ejercicio 13: Simulador de una cola de atención al cliente 
+// Ejercicio 11: Gestión de inventario de una tienda - Ejercicio 12: Clasificación de palabras según su longitud - Ejercicio 13: Simulador de una cola de atención al cliente 
